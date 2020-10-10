@@ -1,0 +1,42 @@
+# Maintainer : bartus <arch-user-repoᘓbartus.33mail.com>
+
+pkgname=custom_view_select
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="custom view select"
+arch=('i686' 'x86_64')
+url="https://zhuimeng999/custom_view_select.git"
+license=('GPL')
+groups=()
+depends=('opencv' 'boost')
+makedepends=('git' 'cmake' 'eigen' )
+
+source=()
+sha256sums=()
+
+prepare() {
+  rm -rf ${pkgname}
+  if [ -d "../../../../custom_view_select" ]
+  then
+    ln -sf ../../.. ${pkgname}
+  else
+    git clone git@github.com:zhuimeng999/custom_view_select.git
+  fi
+}
+
+
+build() {
+  cd ${srcdir}
+
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ../${pkgname}
+  make
+}
+
+
+package() {
+  cd ${srcdir}/build
+  make DESTDIR=${pkgdir} install
+}
+# vim:set ts=2 sw=2 et:
