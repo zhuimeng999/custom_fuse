@@ -193,7 +193,7 @@ void depth_filter_launch(const ProblemDesc &pd, cv::Mat &quality_image,
 void depth_filter(const ProjectInfo & project_info, std::vector<std::vector<PlyPoint>> &fused_points)
 {
   fused_points.resize(project_info.images.size());
-  if(!options.gpu){
+  if(options.gpu){
     dump_gpu_info();
   }
 
