@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
   load_project(projectInfo);
 
   std::vector<std::vector<PlyPoint>> fused_points;
+
   depth_filter(projectInfo, fused_points);
 
   BOOST_LOG_TRIVIAL(info) << "write ply file ...";

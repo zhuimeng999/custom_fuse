@@ -81,7 +81,7 @@ void load_project(ProjectInfo &project_info)
         project_info.probs.push_back(depth);
         {
           Eigen::Matrix4f extr;
-          std::ifstream in(cam);
+          std::ifstream in(cam.string());
           assert(in.is_open());
           std::string signature;
           in >> signature;

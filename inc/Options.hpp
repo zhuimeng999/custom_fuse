@@ -12,11 +12,13 @@ struct Options {
   std::string output_dir;
   std::string pair_info;
 
-  bool generate_depth = false;
   bool debug = false;
+
+  bool generate_depth = false;
+  bool gpu = true;
   uint64_t num_view = 3;
-  double prob_threshold = 0.4;
-  double disparity_threshold = 0.3;
+  float prob_threshold = 0.4;
+  float disparity_threshold = 0.3;
 };
 
 extern Options options;
