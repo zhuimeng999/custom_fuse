@@ -1,11 +1,11 @@
 # Maintainer : bartus <arch-user-repoᘓbartus.33mail.com>
 
-pkgname=custom_view_select
+pkgname=custom_fuse
 pkgver=0.1.0
 pkgrel=1
-pkgdesc="custom view select"
+pkgdesc="custom fuse"
 arch=('i686' 'x86_64')
-url="https://zhuimeng999/custom_view_select.git"
+url="https://zhuimeng999/custom_fuse.git"
 license=('GPL')
 groups=()
 depends=('opencv' 'boost')
@@ -16,11 +16,11 @@ sha256sums=()
 
 prepare() {
   rm -rf ${pkgname}
-  if [ -d "../../../../custom_view_select" ]
+  if [ -d "../../../../custom_fuse" ]
   then
     ln -sf ../../.. ${pkgname}
   else
-    git clone git@github.com:zhuimeng999/custom_view_select.git
+    git clone git@github.com:zhuimeng999/custom_fuse.git
   fi
 }
 

@@ -1,2 +1,5 @@
 /.idea/
 /cmake-build-debug/
+/scripts/arch/pkg/
+/scripts/arch/src/
+*.1.0-1-x86_64.pkg.tar.zst
